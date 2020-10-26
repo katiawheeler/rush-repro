@@ -1,0 +1,83 @@
+{
+  "name": "package-1",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run clean && npm run generate-types && rollup -c",
+    "clean": "rimraf dist",
+    "generate-types": "tsc || echo true",
+    "start": "start-storybook -p 6006",
+    "start:docs-only": "start-storybook -p 6006 --docs",
+    "test": "react-scripts test",
+    "test:ci": "cross-env CI=true react-scripts test --reporters=default --reporters=jest-junit",
+    "build-storybook": "rimraf public && build-storybook --docs -o ./public",
+    "prepare": "npm run build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "@brainhubeu/react-carousel": "^1.19.26",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "date-fns": "^2.14.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.uniqueid": "^4.0.1",
+    "react-datepicker": "^3.0.0",
+    "react-flexbox-grid": "^2.1.2",
+    "react-spring": "^8.0.27"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@rollup/plugin-babel": "^5.0.3",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-image": "^2.0.4",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@storybook/addon-a11y": "^6.0.21",
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-docs": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/addon-viewport": "^6.0.21",
+    "@storybook/addons": "^6.0.21",
+    "@storybook/react": "^6.0.21",
+    "@testing-library/jest-dom": "^5.1.0",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^8.1.0",
+    "babel-loader": "^8.0.0",
+    "cross-env": "^6.0.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest-enzyme": "^7.1.2",
+    "jest-junit": "11.1.0",
+    "postcss-modules-values": "^3.0.0",
+    "postcss-normalize": "^8.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "prop-types": "^15.7.2",
+    "react-dom": "^16.12.0",
+    "react-is": "^16.12.0",
+    "react-scripts": "^2.1.8",
+    "rimraf": "~3.0.2",
+    "rollup": "2.16.1",
+    "rollup-plugin-postcss": "^2.0.6",
+    "storybook-addon-rtl": "^0.2.2",
+    "typescript": "^3.4.3"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "@testing-library/dom": "^5.0.0",
+    "@storybook/addons": "^4.0.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "ie 11",
+    "not op_mini all"
+  ]
+}

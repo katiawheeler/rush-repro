@@ -1,0 +1,51 @@
+{
+  "name": "package-2",
+  "version": "0.4.0",
+  "main": "dist/index.js",
+  "dependencies": {
+    "core-js": "^3.0.1",
+    "moment": "^2.29.1"
+  },
+  "scripts": {
+    "clean": "rimraf build dist",
+    "build": "npm run clean && rollup -c",
+    "test": "react-scripts test",
+    "test:teamcity": "cross-env CI=true react-scripts test --passWithNoTests"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.12.1",
+    "@rollup/plugin-babel": "^5.0.3",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "babel-loader": "^8.0.0",
+    "cross-env": "^6.0.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
+    "jest-enzyme": "^7.1.2",
+    "rollup": "2.16.1",
+    "rimraf": "^3.0.2",
+    "react-scripts": "^2.1.8"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^StringResources/(.*)$": "<rootDir>/src/ResourceStringHelper/tests/__mocks__/$1"
+    }
+  }
+}
